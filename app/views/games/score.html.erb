@@ -1,0 +1,13 @@
+<h1>Result</h1>
+<% if !@grid %>
+  <p>Sorry but <%= @word.upcase %> can't be built out of <%=@grid_word.split(' ').join(', ').upcase%>
+  </p>
+<% elsif !@res %>
+  <p>Sorry but <%= @word.upcase %> does not seem to be a valid English word.
+  </p>
+<% else %>
+  <p>Congratulations! <%= @word.upcase %> is a valid English word!
+  </p>
+<% end %>
+
+<a><%= link_to "Play again", new_path %></a>
